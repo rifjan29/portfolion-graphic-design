@@ -557,82 +557,76 @@ export default function PortfolioPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-20 md:py-32">
+      <section className="relative overflow-hidden py-12 md:py-20 lg:py-32">
         {/* Simple animated background */}
         <div className="absolute inset-0 -z-10">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-muted/20"></div>
-          <div className="absolute left-1/4 top-1/4 h-64 w-64 animate-pulse rounded-full bg-primary/10 blur-3xl"></div>
-          <div className="absolute bottom-1/4 right-1/4 h-96 w-96 animate-pulse rounded-full bg-muted/20 blur-3xl [animation-delay:2s]"></div>
+          <div className="absolute left-1/4 top-1/4 h-32 w-32 md:h-64 md:w-64 animate-pulse rounded-full bg-primary/10 blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 h-48 w-48 md:h-96 md:w-96 animate-pulse rounded-full bg-muted/20 blur-3xl [animation-delay:2s]"></div>
         </div>
 
         <div className="container mx-auto px-4">
-          <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
+          <div className="mx-auto grid max-w-6xl items-center gap-8 md:gap-12 md:grid-cols-2">
             {/* Left Column - Text Content */}
-            <div className="space-y-6 animate-in fade-in slide-in-from-left-10 duration-1000">
-              <Badge className="bg-primary/10 text-primary" variant="secondary">
+            <div className="space-y-4 md:space-y-6 animate-in fade-in slide-in-from-left-10 duration-1000">
+              <Badge className="bg-primary/10 text-primary text-xs md:text-sm" variant="secondary">
                 Fresh Graduate · 2 Years Experience
               </Badge>
-              <h1 className="text-balance text-5xl font-bold tracking-tight md:text-6xl lg:text-7xl">
+              <h1 className="text-balance text-3xl font-bold tracking-tight md:text-5xl lg:text-7xl">
                 Creative Designer
               </h1>
-              <div className="my-8 flex items-center gap-4 text-muted-foreground">
+              <div className="my-4 md:my-8 flex items-center gap-4 text-muted-foreground">
                 <span className="h-px flex-1 bg-border border-2"></span>
                 <span className="text-sm tracking-widest">✦</span>
                 <span className="h-px flex-1 bg-border border-2"></span>
               </div>
-              <h1 className="flex flex-wrap items-center gap-3 text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide text-foreground">
-                
+              <h1 className="flex flex-wrap items-center gap-2 md:gap-3 text-xl md:text-3xl lg:text-5xl font-bold tracking-wide text-foreground">
                 <span>ROMADHONI</span>
 
                 {/* Say Hi */}
-                <span className="animate-wave text-2xl md:text-5xl">
-                  👋
-                </span>
+                <span className="animate-wave text-xl md:text-2xl lg:text-5xl">👋</span>
                 <span>MOCH VIKRY</span>
 
                 {/* Badge Dhoni */}
-                <span className="px-3 py-1 font-bold text-sm md:text-base  rounded-full border border-primary/40 text-primary bg-primary/5 backdrop-blur-sm">
+                <span className="px-2 md:px-3 py-1 font-bold text-xs md:text-sm rounded-full border border-primary/40 text-primary bg-primary/5 backdrop-blur-sm">
                   Dhoni
                 </span>
-
               </h1>
-              <p className="text-pretty text-xl text-muted-foreground md:text-2xl">
+              <p className="text-pretty text-base md:text-xl text-muted-foreground lg:text-2xl">
                 Fresh Graduate Universitas Trunojoyo Madura
               </p>
-              <p className="text-balance text-base leading-relaxed text-foreground/80 md:text-lg">
-                <strong>Content Planner</strong> dengan pengalaman lebih dari  <span className="font-semibold text-primary">2 Tahun</span> dalam mengelola dan merancang strategi konten media sosial untuk 
-                media publikasi, organisasi kepemudaan, industri hiburan, brand sablon kaos, serta akun personal pemilihan umum 
-                mahasiswa. Terbiasa menyusun content planning berbasis tren dan data insight untuk meningkatkan jangkauan, engagement, 
-                dan performa akun. {" "}
+              <p className="text-balance text-sm md:text-base leading-relaxed text-foreground/80 lg:text-lg">
+                <strong>Content Planner</strong> dengan pengalaman lebih dari{" "}
+                <span className="font-semibold text-primary">2 Tahun</span> dalam mengelola dan merancang strategi
+                konten media sosial untuk media publikasi, organisasi kepemudaan, industri hiburan, brand sablon kaos,
+                serta akun personal pemilihan umum mahasiswa. Terbiasa menyusun content planning berbasis tren dan data
+                insight untuk meningkatkan jangkauan, engagement, dan performa akun.{" "}
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4">
                 {/* Email */}
-                <Link href="mailto:mochvikryromadhoni@gmail.com">
-                  <Button size="lg" className="gap-2 transition-transform hover:scale-105">
+                <Link href="mailto:mochvikryromadhoni@gmail.com" className="w-full sm:w-auto">
+                  <Button size="lg" className="w-full sm:w-auto gap-2 transition-transform hover:scale-105">
                     <Mail className="h-4 w-4" />
                     Hubungi Saya
                   </Button>
                 </Link>
 
                 {/* Portfolio */}
-                <a href="/CV MOCH VIKRY ROMADHONI.pdf" download>
-                    <Button
-                      size="lg"
-                      variant="outline"
-                      className="transition-transform hover:scale-105 bg-transparent"
-                    >
-                      Download CV
-                    </Button>
-                  </a>
-
-                {/* WhatsApp */}
-                <Link
-                  href="https://wa.me/6287756876130"
-                  target="_blank"
-                >
+                <a href="/CV MOCH VIKRY ROMADHONI.pdf" download className="w-full sm:w-auto">
                   <Button
                     size="lg"
-                    className="gap-2 bg-green-600 hover:bg-green-700 transition-transform hover:scale-105"
+                    variant="outline"
+                    className="w-full sm:w-auto transition-transform hover:scale-105 bg-transparent"
+                  >
+                    Download CV
+                  </Button>
+                </a>
+
+                {/* WhatsApp */}
+                <Link href="https://wa.me/6287756876130" target="_blank" className="w-full sm:w-auto">
+                  <Button
+                    size="lg"
+                    className="w-full sm:w-auto gap-2 bg-green-600 hover:bg-green-700 transition-transform hover:scale-105"
                   >
                     <Phone className="h-4 w-4" />
                     WhatsApp
@@ -642,10 +636,10 @@ export default function PortfolioPage() {
             </div>
 
             {/* Right Column - Photos Grid */}
-            <div className="relative animate-in fade-in slide-in-from-right-10 duration-1000 [animation-delay:200ms]">
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-4">
-                  <div className="group relative overflow-hidden rounded-2xl shadow-lg transition-transform hover:scale-105">
+            <div className="relative animate-in fade-in slide-in-from-right-10 duration-1000 [animation-delay:200ms] order-first md:order-last">
+              <div className="grid grid-cols-2 gap-3 md:gap-4">
+                <div className="space-y-3 md:space-y-4">
+                  <div className="group relative overflow-hidden rounded-xl md:rounded-2xl shadow-lg transition-transform hover:scale-105">
                     <img
                       src="/profil1.jpeg"
                       alt="Designer at work"
@@ -653,7 +647,7 @@ export default function PortfolioPage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
                   </div>
-                  <div className="group relative overflow-hidden rounded-2xl shadow-lg transition-transform hover:scale-105">
+                  <div className="group relative overflow-hidden rounded-xl md:rounded-2xl shadow-lg transition-transform hover:scale-105">
                     <img
                       src="/profil2.jpeg"
                       alt="Creative work"
@@ -662,8 +656,8 @@ export default function PortfolioPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
                   </div>
                 </div>
-                <div className="space-y-4 pt-8">
-                  <div className="group relative overflow-hidden rounded-2xl shadow-lg transition-transform hover:scale-105">
+                <div className="space-y-3 md:space-y-4 pt-4 md:pt-8">
+                  <div className="group relative overflow-hidden rounded-xl md:rounded-2xl shadow-lg transition-transform hover:scale-105">
                     <img
                       src="/profil.jpeg"
                       alt="Design project"
@@ -671,7 +665,7 @@ export default function PortfolioPage() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
                   </div>
-                  <div className="group relative overflow-hidden rounded-2xl shadow-lg transition-transform hover:scale-105">
+                  <div className="group relative overflow-hidden rounded-xl md:rounded-2xl shadow-lg transition-transform hover:scale-105">
                     <img
                       src="/profil3.jpeg"
                       alt="UI Design"
@@ -682,8 +676,8 @@ export default function PortfolioPage() {
                 </div>
               </div>
               {/* Decorative floating element */}
-              <div className="absolute -right-8 -top-8 h-32 w-32 rounded-full bg-primary/20 blur-2xl animate-pulse"></div>
-              <div className="absolute -bottom-8 -left-8 h-40 w-40 rounded-full bg-muted/30 blur-2xl animate-pulse [animation-delay:1s]"></div>
+              <div className="absolute -right-4 md:-right-8 -top-4 md:-top-8 h-24 w-24 md:h-32 md:w-32 rounded-full bg-primary/20 blur-2xl animate-pulse"></div>
+              <div className="absolute -bottom-4 md:-bottom-8 -left-4 md:-left-8 h-32 w-32 md:h-40 md:w-40 rounded-full bg-muted/30 blur-2xl animate-pulse [animation-delay:1s]"></div>
             </div>
           </div>
         </div>

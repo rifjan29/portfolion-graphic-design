@@ -156,3 +156,28 @@
     @apply text-primary underline hover:text-primary/80 transition-colors;
   }
 }
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(14deg); }
+  40% { transform: rotate(-8deg); }
+  60% { transform: rotate(14deg); }
+  80% { transform: rotate(-4deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.animate-wave {
+  display: inline-block;
+  transform-origin: 70% 70%;
+  animation: wave 1.6s ease-in-out infinite;
+}
+
+@keyframes underline {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.animate-underline {
+  animation: underline 1s ease forwards;
+}

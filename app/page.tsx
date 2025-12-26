@@ -20,7 +20,17 @@ import {
   ExternalLink,
   Moon,
   Sun,
+  Briefcase,
+  Calendar,
+  TrendingUp,
+  Award,
+  Clock,
+  User,
+  Tag,
+  Info,
+  Phone,
 } from "lucide-react"
+import Link from "next/link"
 
 export default function PortfolioPage() {
   const [activeFilter, setActiveFilter] = useState<string>("Semua")
@@ -29,6 +39,8 @@ export default function PortfolioPage() {
   const [playingVideo, setPlayingVideo] = useState(false)
   const [isDarkMode, setIsDarkMode] = useState(false)
   const router = useRouter()
+  const [selectedPortfolioItem, setSelectedPortfolioItem] = useState<any>(null)
+  const [showPortfolioDetail, setShowPortfolioDetail] = useState(false)
 
   useEffect(() => {
     if (isDarkMode) {
@@ -39,78 +51,415 @@ export default function PortfolioPage() {
   }, [isDarkMode])
 
   const portfolioItems = [
+    // After Movie Videos
     {
       id: 1,
+      title: "After Movie - PKKMB UTM 2023",
+      category: "Video",
+      image: "/after-movie-event-university-students.jpg",
+      description: "After movie pengenalan kehidupan kampus mahasiswa baru UTM",
+      videoUrl: "https://www.youtube.com/embed/QsZrU0G4D20",
+      externalLink: "https://youtu.be/QsZrU0G4D20?si=MRpLAstTB50dKnCn",
+      client: "Universitas Trunojoyo Madura",
+      date: "September 2023",
+      duration: "5 menit",
+      tools: ["Adobe Premiere Pro", "After Effects", "DaVinci Resolve"],
+      role: "Video Editor & Colorist",
+      details:
+        "Membuat after movie untuk kegiatan PKKMB UTM 2023 dengan menampilkan momen-momen penting selama kegiatan pengenalan kampus. Video ini menggabungkan footage dari berbagai sudut dan dilengkapi dengan color grading profesional serta motion graphics yang menarik.",
+    },
+    {
+      id: 2,
+      title: "After Movie - Wisuda UTM",
+      category: "Video",
+      image: "/graduation-ceremony-after-movie.jpg",
+      description: "Dokumentasi momen wisuda mahasiswa Universitas Trunojoyo",
+      videoUrl: "https://www.youtube.com/embed/W4V6qwHP9Fw",
+      externalLink: "https://youtu.be/W4V6qwHP9Fw?si=A2fUlOTJeZTcwzKd",
+      client: "Universitas Trunojoyo Madura",
+      date: "Agustus 2023",
+      duration: "7 menit",
+      tools: ["Adobe Premiere Pro", "After Effects", "Audition"],
+      role: "Videographer & Editor",
+      details:
+        "Dokumentasi lengkap acara wisuda dengan menangkap momen emosional dan kebahagiaan para wisudawan. Menggunakan multiple camera angles dan audio mixing profesional untuk hasil yang cinematik.",
+    },
+    {
+      id: 3,
+      title: "After Movie - Festival Seni",
+      category: "Video",
+      image: "/art-festival-after-movie.jpg",
+      description: "After movie festival seni dan budaya mahasiswa",
+      videoUrl: "https://www.youtube.com/embed/dmRMB1l2ScQ",
+      externalLink: "https://youtu.be/dmRMB1l2ScQ?si=MhIjdJOptINO9XTl",
+      client: "Universitas Trunojoyo Madura",
+      date: "Juli 2023",
+      duration: "6 menit",
+      tools: ["Adobe Premiere Pro", "After Effects"],
+      role: "Video Editor",
+      details:
+        "After movie yang menampilkan keindahan festival seni dan budaya dengan penekanan pada visual yang artistik dan musik yang sesuai dengan tema budaya.",
+    },
+    {
+      id: 4,
+      title: "After Movie - Seminar Nasional",
+      category: "Video",
+      image: "/national-seminar-event.jpg",
+      description: "Dokumentasi seminar nasional pendidikan",
+      videoUrl: "https://www.youtube.com/embed/7Op6a0yNMXc",
+      externalLink: "https://youtu.be/7Op6a0yNMXc?si=CpaNAhy-5xKkwg3k",
+      client: "Universitas Trunojoyo Madura",
+      date: "Juni 2023",
+      duration: "4 menit",
+      tools: ["Adobe Premiere Pro", "Photoshop"],
+      role: "Video Editor & Motion Designer",
+      details:
+        "Video dokumentasi seminar nasional dengan fokus pada konten edukasi dan pembicara. Dilengkapi dengan lower thirds dan grafis informasi yang informatif.",
+    },
+    {
+      id: 5,
+      title: "After Movie - Workshop Kreatif",
+      category: "Video",
+      image: "/creative-workshop-students.jpg",
+      description: "After movie workshop pengembangan kreativitas mahasiswa",
+      videoUrl: "https://www.youtube.com/embed/QRHWpkc-wwo",
+      externalLink: "https://youtu.be/QRHWpkc-wwo?si=dNZLsw-z1QaIwkoK",
+      client: "Universitas Trunojoyo Madura",
+      date: "Mei 2023",
+      duration: "5 menit",
+      tools: ["Adobe Premiere Pro", "After Effects"],
+      role: "Video Editor",
+      details:
+        "Menampilkan proses kreatif dan hasil karya peserta workshop dengan narasi yang inspiratif dan visual yang engaging.",
+    },
+
+    // Profile Videos
+    {
+      id: 6,
+      title: "Profil Organisasi Mahasiswa",
+      category: "Video",
+      image: "/student-organization-profile.jpg",
+      description: "Video profil organisasi kemahasiswaan",
+      videoUrl: "https://www.youtube.com/embed/bDZjdUHVI-s",
+      externalLink: "https://youtu.be/bDZjdUHVI-s?si=zawgcs34aFrNDYzv",
+      client: "Organisasi Mahasiswa UTM",
+      date: "April 2023",
+      duration: "3 menit",
+      tools: ["Adobe Premiere Pro", "After Effects", "Photoshop"],
+      role: "Video Producer & Editor",
+      details:
+        "Video profil komprehensif yang menampilkan visi, misi, dan kegiatan organisasi dengan gaya yang modern dan profesional.",
+    },
+    {
+      id: 7,
+      title: "Profil Fakultas Teknik",
+      category: "Video",
+      image: "/engineering-faculty-profile.jpg",
+      description: "Video promosi Fakultas Teknik UTM",
+      videoUrl: "https://www.youtube.com/embed/wXv_3R8PLyM",
+      externalLink: "https://youtu.be/wXv_3R8PLyM?si=69oIgAVZOShj8OdB",
+      client: "Fakultas Teknik UTM",
+      date: "Maret 2023",
+      duration: "4 menit",
+      tools: ["Adobe Premiere Pro", "After Effects", "Illustrator"],
+      role: "Videographer & Editor",
+      details:
+        "Video promosi yang menampilkan fasilitas, program studi, dan prestasi fakultas dengan narasi yang meyakinkan dan visual yang menarik.",
+    },
+    {
+      id: 8,
+      title: "Profil Program Studi",
+      category: "Video",
+      image: "/study-program-profile-university.jpg",
+      description: "Video profil program studi unggulan",
+      videoUrl: "https://www.youtube.com/embed/FvZeMtLrwhk",
+      externalLink: "https://youtu.be/FvZeMtLrwhk?si=-7D5841CH0M0Rkh6",
+      client: "Universitas Trunojoyo Madura",
+      date: "Februari 2023",
+      duration: "5 menit",
+      tools: ["Adobe Premiere Pro", "After Effects"],
+      role: "Video Editor & Motion Designer",
+      details:
+        "Menampilkan keunggulan program studi dengan testimoni mahasiswa dan dosen, dilengkapi dengan infografis dan animasi yang informatif.",
+    },
+    {
+      id: 9,
+      title: "Profil Prestasi Mahasiswa",
+      category: "Video",
+      image: "/student-achievement-profile.jpg",
+      description: "Dokumentasi prestasi mahasiswa berprestasi",
+      videoUrl: "https://www.youtube.com/embed/IknCeSSEWGA",
+      externalLink: "https://youtu.be/IknCeSSEWGA?si=1JyA7UKuFL1K8tOk",
+      client: "Universitas Trunojoyo Madura",
+      date: "Januari 2023",
+      duration: "6 menit",
+      tools: ["Adobe Premiere Pro", "After Effects", "Audition"],
+      role: "Video Producer & Editor",
+      details:
+        "Kisah inspiratif mahasiswa berprestasi dengan pendekatan storytelling yang emosional dan visual yang cinematik.",
+    },
+    {
+      id: 10,
+      title: "Profil Kampus UTM",
+      category: "Video",
+      image: "/university-campus-profile-aerial-view.jpg",
+      description: "Video profil kampus Universitas Trunojoyo Madura",
+      videoUrl: "https://www.youtube.com/embed/TCFn3lBkRPg",
+      externalLink: "https://youtu.be/TCFn3lBkRPg?si=0quVQWm3XISUOzPy",
+      client: "Universitas Trunojoyo Madura",
+      date: "Desember 2022",
+      duration: "8 menit",
+      tools: ["Adobe Premiere Pro", "After Effects", "DaVinci Resolve"],
+      role: "Videographer, Editor & Colorist",
+      details:
+        "Video profil lengkap kampus dengan aerial shots, fasilitas, dan kehidupan kampus yang vibrant. Menggunakan color grading profesional dan musik yang sesuai.",
+    },
+
+    // Short Movie
+    {
+      id: 11,
+      title: "Short Movie - Perjuangan Mahasiswa",
+      category: "Video",
+      image: "/short-film-student-struggle.jpg",
+      description: "Film pendek tentang perjuangan mahasiswa mengejar mimpi",
+      videoUrl: "https://www.youtube.com/embed/57Vl-3lLMfo",
+      externalLink: "https://youtu.be/57Vl-3lLMfo?si=YmSH4ECjt1iZtG7Z",
+      client: "Project Personal",
+      date: "November 2022",
+      duration: "15 menit",
+      tools: ["Adobe Premiere Pro", "After Effects", "Audition", "DaVinci Resolve"],
+      role: "Director, Scripter, Editor",
+      details:
+        "Film pendek dengan cerita yang kuat tentang perjuangan mahasiswa. Menggunakan teknik sinematografi yang baik dan editing yang tight untuk menyampaikan emosi.",
+    },
+    {
+      id: 12,
+      title: "Short Movie - Persahabatan",
+      category: "Video",
+      image: "/friendship-short-film.jpg",
+      description: "Film pendek tentang makna persahabatan sejati",
+      videoUrl: "https://www.youtube.com/embed/KaL5P8A1ghg",
+      externalLink: "https://youtu.be/KaL5P8A1ghg?si=H5etJ8VDD5lVNmhA",
+      client: "Project Personal",
+      date: "Oktober 2022",
+      duration: "12 menit",
+      tools: ["Adobe Premiere Pro", "After Effects", "Audition"],
+      role: "Director, Cameraman, Editor",
+      details: "Cerita menyentuh tentang persahabatan dengan visual yang cinematik dan musik yang emosional.",
+    },
+    {
+      id: 13,
+      title: "Short Movie - Inspirasi",
+      category: "Video",
+      image: "/inspirational-short-movie.jpg",
+      description: "Film pendek inspiratif untuk generasi muda",
+      videoUrl: "https://www.youtube.com/embed/qHgPv8S2Xh0",
+      externalLink: "https://youtu.be/qHgPv8S2Xh0?si=0UUb0fw1_48MDbpn",
+      client: "Project Personal",
+      date: "September 2022",
+      duration: "10 menit",
+      tools: ["Adobe Premiere Pro", "After Effects"],
+      role: "Scripter, Cameraman, Editor",
+      details:
+        "Film pendek dengan pesan inspiratif yang kuat untuk generasi muda, menggunakan visual yang menarik dan narasi yang powerful.",
+    },
+
+    // Podcast
+    {
+      id: 14,
+      title: "Podcast - Tips Produktif Mahasiswa",
+      category: "Video",
+      image: "/podcast-studio-students-talking.jpg",
+      description: "Podcast membahas tips produktif untuk mahasiswa",
+      videoUrl: "https://www.youtube.com/embed/ksGV8RNQPI4",
+      externalLink: "https://youtu.be/ksGV8RNQPI4?si=cAa_Vj3ARZo1OpfG",
+      client: "Project Personal",
+      date: "Agustus 2022",
+      duration: "30 menit",
+      tools: ["Adobe Premiere Pro", "Audition", "Photoshop"],
+      role: "Video Editor & Audio Engineer",
+      details:
+        "Podcast dengan visual yang engaging, subtitle, dan grafis pendukung untuk meningkatkan viewer engagement.",
+    },
+    {
+      id: 15,
+      title: "Podcast - Karir di Industri Kreatif",
+      category: "Video",
+      image: "/podcast-creative-industry-career.jpg",
+      description: "Diskusi tentang peluang karir di industri kreatif",
+      videoUrl: "https://www.youtube.com/embed/NRsopWCx9g8",
+      externalLink: "https://youtu.be/NRsopWCx9g8?si=_qh_K8CSv50PtOgs",
+      client: "Project Personal",
+      date: "Juli 2022",
+      duration: "45 menit",
+      tools: ["Adobe Premiere Pro", "Audition", "After Effects"],
+      role: "Video Editor & Audio Engineer",
+      details: "Podcast format video dengan multiple camera angles, subtitle, dan grafis informasi yang menarik.",
+    },
+    {
+      id: 16,
+      title: "Podcast - Mengembangkan Skill Digital",
+      category: "Video",
+      image: "/placeholder.svg?height=400&width=600",
+      description: "Podcast tentang pengembangan skill digital untuk pemula",
+      videoUrl: "https://www.youtube.com/embed/ROwCl2J-V7Q",
+      externalLink: "https://youtu.be/ROwCl2J-V7Q?si=Fe7FnqhQiRvAclkk",
+      client: "Project Personal",
+      date: "Juni 2022",
+      duration: "40 menit",
+      tools: ["Adobe Premiere Pro", "Audition"],
+      role: "Video Editor",
+      details:
+        "Podcast edukasi dengan visual yang clean dan audio mixing yang jernih untuk pengalaman mendengar yang nyaman.",
+    },
+
+    // Video Edukasi
+    {
+      id: 17,
+      title: "Video Edukasi - Tutorial Editing",
+      category: "Video",
+      image: "/placeholder.svg?height=400&width=600",
+      description: "Video tutorial editing untuk pemula",
+      videoUrl: "https://www.youtube.com/embed/FVbEncZkbnY",
+      externalLink: "https://youtu.be/FVbEncZkbnY?si=T12aopwjKgONLWJl",
+      client: "Project Personal",
+      date: "Mei 2022",
+      duration: "20 menit",
+      tools: ["Adobe Premiere Pro", "Screen Recording Software"],
+      role: "Content Creator & Editor",
+      details: "Tutorial lengkap editing video dengan penjelasan yang mudah dipahami dan visual yang clear.",
+    },
+
+    // Design Projects (keeping some design items)
+    {
+      id: 18,
       title: "Brand Identity Design",
       category: "Desain",
       image: "/modern-brand-identity-design-mockup.jpg",
       description: "Identitas visual lengkap untuk startup teknologi",
+      client: "Tech Startup",
+      date: "April 2023",
+      duration: "2 minggu",
+      tools: ["Adobe Illustrator", "Photoshop", "Figma"],
+      role: "Brand Designer",
+      details:
+        "Menciptakan identitas visual yang modern dan profesional untuk startup teknologi, termasuk logo, color palette, typography, dan brand guidelines.",
     },
     {
-      id: 2,
+      id: 19,
       title: "Social Media Campaign",
       category: "Social Media",
       image: "/colorful-social-media-posts-grid.jpg",
       description: "Kampanye media sosial untuk brand fashion",
+      client: "Fashion Brand",
+      date: "Maret 2023",
+      duration: "1 bulan",
+      tools: ["Adobe Photoshop", "Illustrator", "Canva"],
+      role: "Social Media Designer",
+      details:
+        "Merancang konten media sosial yang konsisten dan menarik untuk kampanye fashion brand dengan 50+ desain posts.",
     },
     {
-      id: 3,
-      title: "Product Launch Video",
-      category: "Video",
-      image: "/video-editing-timeline-with-colorful-clips.jpg",
-      description: "Video promosi peluncuran produk baru",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      externalLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    },
-    {
-      id: 4,
+      id: 20,
       title: "UI/UX Design Project",
       category: "Desain",
       image: "/mobile-app-interface-design-screens.png",
       description: "Desain antarmuka aplikasi mobile e-commerce",
+      client: "E-commerce Startup",
+      date: "Februari 2023",
+      duration: "3 minggu",
+      tools: ["Figma", "Adobe XD", "Illustrator"],
+      role: "UI/UX Designer",
+      details:
+        "Merancang user interface dan user experience untuk aplikasi mobile e-commerce dengan fokus pada usability dan estetika modern.",
     },
     {
-      id: 5,
+      id: 21,
       title: "Content Creation",
       category: "Social Media",
       image: "/instagram-content-creation-flatlay.jpg",
       description: "Konten kreatif untuk Instagram dan TikTok",
+      client: "Multiple Clients",
+      date: "Januari 2023",
+      duration: "Ongoing",
+      tools: ["Adobe Photoshop", "Lightroom", "Canva"],
+      role: "Content Creator",
+      details:
+        "Membuat konten visual yang engaging untuk berbagai platform media sosial dengan fokus pada aesthetic dan engagement.",
     },
     {
-      id: 6,
+      id: 22,
       title: "Motion Graphics",
       category: "Video",
       image: "/motion-graphics-frames.png",
       description: "Animasi motion graphics untuk explainer video",
       videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
       externalLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      client: "Corporate Client",
+      date: "Desember 2022",
+      duration: "3 menit",
+      tools: ["Adobe After Effects", "Illustrator", "Premiere Pro"],
+      role: "Motion Designer",
+      details:
+        "Membuat motion graphics yang dynamic dan informatif untuk video explainer perusahaan dengan animasi yang smooth dan profesional.",
     },
   ]
 
   const articles = [
     {
       id: 1,
-      title: "Belajar dari 30+ Project Kreatif Saya",
+      title: "Moge yang Dikendarai Pasutri Dokter Tak Terdaftar",
       date: "15 Januari 2025",
       excerpt:
-        "Perjalanan saya mengerjakan berbagai project kreatif selama masa kuliah dan pelajaran berharga yang saya dapatkan dari setiap project.",
-      readTime: "5 menit",
+        "Hasil olah TKP polisi sementara karena korban kaget karena ada motor nyebrang. Investigasi kecelakaan yang melibatkan moge tak terdaftar.",
+      readTime: "4 menit",
+      externalLink:
+        "https://radarbromo.jawapos.com/probolinggo/1004597380/moge-yang-dikendarai-pasutri-dokter-tak-terdaftar-hasil-olah-tkp-polisi-sementara-karena-korban-kaget-karena-ada-motor-nyebrang",
+      category: "Berita Lokal",
     },
     {
       id: 2,
-      title: "Tips Kolaborasi Tim untuk Designer Muda",
-      date: "8 Januari 2025",
+      title: "Siapkan Delapan Gelas Air Empat Warna di Patung Gajah Mada",
+      date: "12 Januari 2025",
       excerpt:
-        "Cara efektif berkomunikasi dan berkolaborasi dengan tim dari berbagai latar belakang dalam project kreatif.",
-      readTime: "4 menit",
+        "Di Madakaripura, ritual unik dengan delapan gelas air empat warna di patung Gajah Mada. Begini kata juru kunci tentang tradisi tersebut.",
+      readTime: "5 menit",
+      externalLink:
+        "https://radarbromo.jawapos.com/probolinggo/1004849719/siapkan-delapan-gelas-air-empat-warna-di-patung-gajah-mada-di-madakaripura-begini-kata-juru-kunci",
+      category: "Budaya & Tradisi",
     },
     {
       id: 3,
-      title: "Tools Desain Favorit untuk Fresh Graduate",
-      date: "2 Januari 2025",
+      title: "Baru 366 Jemaah Kab Probolinggo Kloter 33 yang Tiba di Tanah Air",
+      date: "10 Januari 2025",
       excerpt:
-        "Rekomendasi tools dan software yang saya gunakan untuk desain grafis, video editing, dan manajemen social media.",
+        "Kepulangan jemaah haji Kabupaten Probolinggo kloter 33 tiba di tanah air. Update terbaru perjalanan ibadah haji tahun ini.",
+      readTime: "3 menit",
+      externalLink:
+        "https://radarbromo.jawapos.com/kraksaan/1004817148/baru-366-jemaah-kab-probolinggo-kloter-33-yang-tiba-di-tanah-air",
+      category: "Religi",
+    },
+    {
+      id: 4,
+      title: "Emak-emak Jadi Korban Begal di Leces, Motor Beat Amblas",
+      date: "8 Januari 2025",
+      excerpt:
+        "Kasus pembegalan di wilayah Leces menimpa seorang ibu. Motor Beat yang dikendarai korban raib dibawa pelaku.",
+      readTime: "4 menit",
+      externalLink:
+        "https://radarbromo.jawapos.com/probolinggo/1004802233/emak-emak-jadi-korban-begal-di-leces-motor-beat-amblas",
+      category: "Kriminal",
+    },
+    {
+      id: 5,
+      title: "Difabel Sejak Lahir Tapi Tidak Pernah Ingin Mengemis",
+      date: "5 Januari 2025",
+      excerpt:
+        "Kisah inspiratif seorang difabel yang memilih untuk mandiri dan tidak pernah berkeinginan untuk mengemis atau dikasihani.",
       readTime: "6 menit",
+      externalLink:
+        "https://radarbromo.jawapos.com/love-life-story/1004447287/difabel-sejak-lahir-tapi-tidak-pernah-ingin-mengemis-dan-dikasihani",
+      category: "Inspirasi",
     },
   ]
 
@@ -119,6 +468,51 @@ export default function PortfolioPage() {
     { icon: Video, name: "Video Editing", description: "Premiere Pro, After Effects" },
     { icon: MessageSquare, name: "Social Media", description: "Content Planning & Management" },
     { icon: Users, name: "Teamwork", description: "Kolaborasi & Komunikasi" },
+  ]
+
+  const workExperience = [
+    {
+      company: "Jawa Pos Radar Bromo",
+      position: "Jurnalis, Tim Online & Event Organizer",
+      period: "Desember 2022 - Sekarang",
+      type: "Full Time",
+      achievements: [
+        "Mengelola semua sosial media perusahaan dengan konten lokal dan menarik",
+        "Meliput berita nasional dengan 10-15 artikel per hari",
+        "Bertanggung jawab sebagai cameraman dan videographer dalam event organizing",
+        "Menjadi fotografer backup untuk peliputan berita",
+      ],
+      icon: TrendingUp,
+      color: "bg-blue-500",
+    },
+    {
+      company: "Freelance Editor Video",
+      position: "Individual & Tim Freelance",
+      period: "Maret 2022 - Sekarang",
+      type: "Freelance",
+      achievements: [
+        "Menyelesaikan 30+ project video editing untuk berbagai klien",
+        "Memimpin tim pembuatan film pendek sebagai scripter, cameraman, dan editor",
+        "Mengelola personal branding di platform digital",
+        "Bertanggung jawab atas project dari client sesuai deadline",
+      ],
+      icon: Video,
+      color: "bg-purple-500",
+    },
+    {
+      company: "Kanal YouTube Irul Lin TV",
+      position: "Editor Video",
+      period: "Mei 2021 - Januari 2022",
+      type: "Contract",
+      achievements: [
+        "Bekerjasama dengan tim untuk menyelesaikan konten sesuai deadline",
+        "Meningkatkan kualitas konten dengan memperhatikan algoritma YouTube",
+        "Menyelesaikan editing video pengetahuan umum dengan capaian 41 ribu viewer",
+        "Mengelola bahan konten (audio dan visual) agar aman dari copyright",
+      ],
+      icon: Award,
+      color: "bg-red-500",
+    },
   ]
 
   const filters = ["Semua", "Desain", "Video", "Social Media"]
@@ -140,6 +534,13 @@ export default function PortfolioPage() {
     setShowVideoOptions(false)
     setPlayingVideo(false)
     setSelectedVideoItem(null)
+    setShowPortfolioDetail(false)
+    setSelectedPortfolioItem(null)
+  }
+
+  const handlePortfolioDetail = (item: any) => {
+    setSelectedPortfolioItem(item)
+    setShowPortfolioDetail(true)
   }
 
   return (
@@ -168,29 +569,75 @@ export default function PortfolioPage() {
           <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
             {/* Left Column - Text Content */}
             <div className="space-y-6 animate-in fade-in slide-in-from-left-10 duration-1000">
-              <Badge className="bg-primary/10 text-primary hover:bg-primary/20" variant="secondary">
-                Fresh Graduate
+              <Badge className="bg-primary/10 text-primary" variant="secondary">
+                Fresh Graduate · 2 Years Experience
               </Badge>
               <h1 className="text-balance text-5xl font-bold tracking-tight md:text-6xl lg:text-7xl">
                 Creative Designer
+              </h1>
+              <div className="my-8 flex items-center gap-4 text-muted-foreground">
+                <span className="h-px flex-1 bg-border border-2"></span>
+                <span className="text-sm tracking-widest">✦</span>
+                <span className="h-px flex-1 bg-border border-2"></span>
+              </div>
+              <h1 className="flex flex-wrap items-center gap-3 text-3xl md:text-4xl lg:text-5xl font-bold tracking-wide text-foreground">
+                
+                <span>ROMADHONI</span>
+
+                {/* Say Hi */}
+                <span className="animate-wave text-2xl md:text-5xl">
+                  👋
+                </span>
+                <span>MOCH VIKRY</span>
+
+                {/* Badge Dhoni */}
+                <span className="px-3 py-1 font-bold text-sm md:text-base  rounded-full border border-primary/40 text-primary bg-primary/5 backdrop-blur-sm">
+                  Dhoni
+                </span>
+
               </h1>
               <p className="text-pretty text-xl text-muted-foreground md:text-2xl">
                 Fresh Graduate Universitas Trunojoyo Madura
               </p>
               <p className="text-balance text-base leading-relaxed text-foreground/80 md:text-lg">
-                Lulusan baru yang tertarik industri kreatif, memiliki kemampuan kerjasama tim yang sangat baik dan
-                komunikasi yang mudah dengan orang dari berbagai latar belakang. Selama kuliah telah mengerjakan{" "}
-                <span className="font-semibold text-primary">30+ project</span> yang mencakup desain grafis, video
-                editing, dan pengelolaan sosial media.
+                <strong>Content Planner</strong> dengan pengalaman lebih dari  <span className="font-semibold text-primary">2 Tahun</span> dalam mengelola dan merancang strategi konten media sosial untuk 
+                media publikasi, organisasi kepemudaan, industri hiburan, brand sablon kaos, serta akun personal pemilihan umum 
+                mahasiswa. Terbiasa menyusun content planning berbasis tren dan data insight untuk meningkatkan jangkauan, engagement, 
+                dan performa akun. {" "}
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="gap-2 transition-transform hover:scale-105">
-                  <Mail className="h-4 w-4" />
-                  Hubungi Saya
-                </Button>
-                <Button size="lg" variant="outline" className="transition-transform hover:scale-105 bg-transparent">
-                  Lihat Portfolio
-                </Button>
+                {/* Email */}
+                <Link href="mailto:mochvikryromadhoni@gmail.com">
+                  <Button size="lg" className="gap-2 transition-transform hover:scale-105">
+                    <Mail className="h-4 w-4" />
+                    Hubungi Saya
+                  </Button>
+                </Link>
+
+                {/* Portfolio */}
+                <a href="/CV MOCH VIKRY ROMADHONI.pdf" download>
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="transition-transform hover:scale-105 bg-transparent"
+                    >
+                      Download CV
+                    </Button>
+                  </a>
+
+                {/* WhatsApp */}
+                <Link
+                  href="https://wa.me/6287756876130"
+                  target="_blank"
+                >
+                  <Button
+                    size="lg"
+                    className="gap-2 bg-green-600 hover:bg-green-700 transition-transform hover:scale-105"
+                  >
+                    <Phone className="h-4 w-4" />
+                    WhatsApp
+                  </Button>
+                </Link>
               </div>
             </div>
 
@@ -200,7 +647,7 @@ export default function PortfolioPage() {
                 <div className="space-y-4">
                   <div className="group relative overflow-hidden rounded-2xl shadow-lg transition-transform hover:scale-105">
                     <img
-                      src="/professional-creative-designer-portrait.jpg"
+                      src="/profil1.jpeg"
                       alt="Designer at work"
                       className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
@@ -208,7 +655,7 @@ export default function PortfolioPage() {
                   </div>
                   <div className="group relative overflow-hidden rounded-2xl shadow-lg transition-transform hover:scale-105">
                     <img
-                      src="/colorful-social-media-posts-grid.jpg"
+                      src="/profil2.jpeg"
                       alt="Creative work"
                       className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
@@ -218,15 +665,15 @@ export default function PortfolioPage() {
                 <div className="space-y-4 pt-8">
                   <div className="group relative overflow-hidden rounded-2xl shadow-lg transition-transform hover:scale-105">
                     <img
-                      src="/modern-brand-identity-design-mockup.jpg"
+                      src="/profil.jpeg"
                       alt="Design project"
-                      className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="aspect-[3/3] w-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 transition-opacity group-hover:opacity-100"></div>
                   </div>
                   <div className="group relative overflow-hidden rounded-2xl shadow-lg transition-transform hover:scale-105">
                     <img
-                      src="/mobile-app-interface-design-screens.png"
+                      src="/profil3.jpeg"
                       alt="UI Design"
                       className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
@@ -243,11 +690,11 @@ export default function PortfolioPage() {
       </section>
 
       {/* About / Skills Section */}
-      <section className="py-16 md:py-24" id="tentang">
+      <section className="py-16 md:py-24 bg-emerald-900" id="tentang">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-6xl">
             <div className="animate-in fade-in slide-in-from-bottom-6 duration-700">
-              <h2 className="mb-4 text-center text-3xl font-bold md:text-4xl">Tentang Saya</h2>
+              <h2 className="mb-4 text-center text-3xl font-bold md:text-4xl text-white">Tentang Saya</h2>
               <p className="mb-12 text-center text-muted-foreground">Keahlian dan pengalaman yang saya miliki</p>
             </div>
 
@@ -282,13 +729,127 @@ export default function PortfolioPage() {
         </div>
       </section>
 
+      {/* Work Experience Section */}
+      <section className="py-16 md:py-24 bg-muted/30" id="pengalaman">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto max-w-6xl">
+            <div className="animate-in fade-in slide-in-from-bottom-6 duration-700">
+              <div className="mb-4 flex items-center justify-center gap-2">
+                <Briefcase className="h-8 w-8 text-primary" />
+                <h2 className="text-center text-3xl font-bold md:text-4xl">Pengalaman Kerja</h2>
+              </div>
+              <p className="mb-12 text-center text-muted-foreground">
+                Perjalanan profesional saya di industri kreatif dan media
+              </p>
+            </div>
+
+            <div className="relative">
+              {/* Timeline line */}
+              <div className="absolute left-4 top-8 bottom-8 w-0.5 bg-gradient-to-b from-primary via-primary/50 to-primary/20 md:left-1/2"></div>
+
+              <div className="space-y-12">
+                {workExperience.map((job, index) => (
+                  <div
+                    key={index}
+                    className={`relative animate-in fade-in slide-in-from-${
+                      index % 2 === 0 ? "left" : "right"
+                    }-10 duration-700`}
+                    style={{ animationDelay: `${index * 150}ms` }}
+                  >
+                    <div className={`md:grid md:grid-cols-2 md:gap-8 ${index % 2 === 0 ? "" : "md:flex-row-reverse"}`}>
+                      {/* Timeline dot */}
+                      <div className="absolute left-4 top-8 -ml-[7px] h-3.5 w-3.5 rounded-full border-4 border-background bg-primary shadow-lg md:left-1/2 animate-pulse"></div>
+
+                      {/* Content Card */}
+                      <div className={`ml-12 md:ml-0 ${index % 2 === 0 ? "md:pr-12" : "md:col-start-2 md:pl-12"}`}>
+                        <Card className="group overflow-hidden transition-all hover:shadow-xl hover:-translate-y-1">
+                          <div className={`h-1 ${job.color}`}></div>
+                          <CardContent className="p-6">
+                            {/* Header */}
+                            <div className="mb-4 flex items-start justify-between gap-4">
+                              <div className="flex-1">
+                                <div className="mb-2 flex items-center gap-2">
+                                  <div
+                                    className={`inline-flex rounded-lg ${job.color} bg-opacity-10 p-2 transition-transform group-hover:scale-110`}
+                                  >
+                                    <job.icon className={`h-5 w-5 ${job.color.replace("bg-", "text-")}`} />
+                                  </div>
+                                  <Badge variant="secondary" className="text-xs">
+                                    {job.type}
+                                  </Badge>
+                                </div>
+                                <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                                  {job.position}
+                                </h3>
+                                <p className="text-base font-semibold text-muted-foreground">{job.company}</p>
+                              </div>
+                            </div>
+
+                            {/* Period */}
+                            <div className="mb-4 flex items-center gap-2 text-sm text-muted-foreground">
+                              <Calendar className="h-4 w-4" />
+                              <span>{job.period}</span>
+                            </div>
+
+                            {/* Achievements */}
+                            <div className="space-y-2">
+                              <h4 className="text-sm font-semibold text-foreground/80">Pencapaian & Tanggung Jawab:</h4>
+                              <ul className="space-y-2">
+                                {job.achievements.map((achievement, idx) => (
+                                  <li
+                                    key={idx}
+                                    className="flex items-start gap-2 text-sm text-foreground/70 leading-relaxed animate-in fade-in slide-in-from-left-4 duration-500"
+                                    style={{ animationDelay: `${index * 150 + idx * 100}ms` }}
+                                  >
+                                    <span className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary"></span>
+                                    <span>{achievement}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Additional Highlight Box */}
+            <div className="mt-12 animate-in fade-in zoom-in-95 duration-700 [animation-delay:600ms]">
+              <Card className="overflow-hidden border-primary/20 bg-gradient-to-br from-primary/5 to-transparent">
+                <CardContent className="p-6 md:p-8">
+                  <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+                    <div className="flex-shrink-0">
+                      <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
+                        <TrendingUp className="h-8 w-8 text-primary" />
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="mb-2 text-xl font-bold">Content Planner Berpengalaman</h3>
+                      <p className="text-pretty leading-relaxed text-muted-foreground">
+                        Dengan pengalaman lebih dari <span className="font-semibold text-primary">2 tahun</span> dalam
+                        mengelola strategi konten media sosial untuk berbagai industri, termasuk media publikasi,
+                        organisasi kepemudaan, brand, dan personal account. Pernah menghasilkan konten dengan capaian
+                        hingga <span className="font-semibold text-primary">5 juta views</span>.
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Portfolio Section */}
       <section className="bg-muted/30 py-16 md:py-24" id="portfolio">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-6xl">
             <div className="animate-in fade-in slide-in-from-bottom-6 duration-700">
               <h2 className="mb-4 text-center text-3xl font-bold md:text-4xl">Portfolio</h2>
-              <p className="mb-8 text-center text-muted-foreground">Koleksi karya terbaik saya</p>
+              <p className="mb-12 text-center text-muted-foreground">Koleksi karya terbaik saya</p>
             </div>
 
             {/* Filter Buttons */}
@@ -310,8 +871,9 @@ export default function PortfolioPage() {
               {filteredPortfolio.map((item, index) => (
                 <Card
                   key={item.id}
-                  className="group overflow-hidden transition-all hover:shadow-xl hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-6 duration-700"
+                  className="group overflow-hidden transition-all hover:shadow-xl hover:-translate-y-2 animate-in fade-in slide-in-from-bottom-6 duration-700 cursor-pointer"
                   style={{ animationDelay: `${200 + index * 100}ms` }}
+                  onClick={() => handlePortfolioDetail(item)}
                 >
                   <div className="relative aspect-video overflow-hidden">
                     <img
@@ -324,7 +886,10 @@ export default function PortfolioPage() {
                         <Button
                           size="lg"
                           className="h-16 w-16 rounded-full transition-transform hover:scale-110"
-                          onClick={() => handleVideoClick(item)}
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            handleVideoClick(item)
+                          }}
                         >
                           <Play className="h-8 w-8" />
                         </Button>
@@ -339,6 +904,9 @@ export default function PortfolioPage() {
                   <CardContent className="p-4">
                     <h3 className="mb-2 font-semibold transition-colors group-hover:text-primary">{item.title}</h3>
                     <p className="text-sm text-muted-foreground">{item.description}</p>
+                    <p className="text-sm text-primary font-medium mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                      Klik untuk lihat detail →
+                    </p>
                   </CardContent>
                 </Card>
               ))}
@@ -364,6 +932,9 @@ export default function PortfolioPage() {
                   style={{ animationDelay: `${100 + index * 100}ms` }}
                 >
                   <CardContent className="p-6">
+                    <Badge className="mb-3" variant="secondary">
+                      {article.category}
+                    </Badge>
                     <div className="mb-4 flex items-center gap-4 text-sm text-muted-foreground">
                       <span>{article.date}</span>
                       <span>•</span>
@@ -376,7 +947,7 @@ export default function PortfolioPage() {
                     <Button
                       variant="link"
                       className="h-auto p-0 transition-transform hover:translate-x-2"
-                      onClick={() => router.push(`/artikel/${article.id}`)}
+                      onClick={() => window.open(article.externalLink, "_blank")}
                     >
                       Baca Selengkapnya →
                     </Button>
@@ -384,91 +955,6 @@ export default function PortfolioPage() {
                 </Card>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section className="bg-muted/30 py-16 md:py-24" id="kontak">
-        <div className="container mx-auto px-4">
-          <div className="mx-auto max-w-4xl">
-            <div className="animate-in fade-in slide-in-from-bottom-6 duration-700">
-              <h2 className="mb-4 text-center text-3xl font-bold md:text-4xl">Hubungi Saya</h2>
-              <p className="mb-12 text-center text-muted-foreground">Mari bekerja sama untuk project Anda</p>
-            </div>
-
-            <Card className="animate-in fade-in slide-in-from-bottom-6 duration-700 [animation-delay:100ms]">
-              <CardContent className="p-6 md:p-8">
-                <form className="space-y-6">
-                  <div className="grid gap-6 md:grid-cols-2">
-                    <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-medium">
-                        Nama
-                      </label>
-                      <Input id="name" placeholder="Nama Anda" className="transition-all focus:scale-[1.01]" />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium">
-                        Email
-                      </label>
-                      <Input
-                        id="email"
-                        type="email"
-                        placeholder="email@example.com"
-                        className="transition-all focus:scale-[1.01]"
-                      />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="subject" className="text-sm font-medium">
-                      Subjek
-                    </label>
-                    <Input id="subject" placeholder="Subjek pesan Anda" className="transition-all focus:scale-[1.01]" />
-                  </div>
-                  <div className="space-y-2">
-                    <label htmlFor="message" className="text-sm font-medium">
-                      Pesan
-                    </label>
-                    <Textarea
-                      id="message"
-                      placeholder="Ceritakan tentang project Anda..."
-                      rows={6}
-                      className="transition-all focus:scale-[1.01]"
-                    />
-                  </div>
-                  <Button size="lg" className="w-full transition-transform hover:scale-105">
-                    Kirim Pesan
-                  </Button>
-                </form>
-
-                <div className="mt-8 border-t pt-8">
-                  <p className="mb-4 text-center text-sm font-medium">Atau hubungi saya melalui:</p>
-                  <div className="flex justify-center gap-4">
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="h-12 w-12 bg-transparent transition-transform hover:scale-110"
-                    >
-                      <Instagram className="h-5 w-5" />
-                    </Button>
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="h-12 w-12 bg-transparent transition-transform hover:scale-110"
-                    >
-                      <Linkedin className="h-5 w-5" />
-                    </Button>
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="h-12 w-12 bg-transparent transition-transform hover:scale-110"
-                    >
-                      <Mail className="h-5 w-5" />
-                    </Button>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
@@ -481,6 +967,140 @@ export default function PortfolioPage() {
           </p>
         </div>
       </footer>
+
+      {/* Portfolio Detail Modal */}
+      {showPortfolioDetail && selectedPortfolioItem && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-4 animate-in fade-in duration-300 backdrop-blur-sm overflow-y-auto"
+          onClick={closeAllModals}
+        >
+          <div
+            className="relative w-full max-w-4xl my-8 animate-in zoom-in-95 duration-300"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Button
+              variant="ghost"
+              size="icon"
+              className="absolute -right-4 -top-4 md:-right-6 md:-top-6 h-12 w-12 rounded-full bg-white/10 text-white hover:bg-white/20 transition-all hover:scale-110 z-10"
+              onClick={closeAllModals}
+            >
+              <X className="h-6 w-6" />
+            </Button>
+
+            <Card className="bg-card/95 backdrop-blur overflow-hidden">
+              {/* Header Image */}
+              <div className="relative aspect-video w-full overflow-hidden">
+                <img
+                  src={selectedPortfolioItem.image || "/placeholder.svg"}
+                  alt={selectedPortfolioItem.title}
+                  className="h-full w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <Badge className="mb-3">{selectedPortfolioItem.category}</Badge>
+                  <h2 className="text-3xl font-bold text-white mb-2">{selectedPortfolioItem.title}</h2>
+                  <p className="text-white/90">{selectedPortfolioItem.description}</p>
+                </div>
+              </div>
+
+              <CardContent className="p-6 md:p-8 space-y-6">
+                {/* Project Info Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="flex items-start gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                      <User className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">Client</p>
+                      <p className="font-semibold">{selectedPortfolioItem.client}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                      <Calendar className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">Tanggal</p>
+                      <p className="font-semibold">{selectedPortfolioItem.date}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                      <Clock className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">Durasi</p>
+                      <p className="font-semibold">{selectedPortfolioItem.duration}</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                      <Briefcase className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">Role</p>
+                      <p className="font-semibold">{selectedPortfolioItem.role}</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Tools Used */}
+                <div>
+                  <div className="flex items-center gap-2 mb-3">
+                    <Tag className="h-5 w-5 text-primary" />
+                    <h3 className="font-semibold text-lg">Tools & Software</h3>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedPortfolioItem.tools?.map((tool: string, index: number) => (
+                      <Badge key={index} variant="secondary" className="px-3 py-1">
+                        {tool}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Project Details */}
+                <div>
+                  <div className="flex items-center gap-2 mb-3">
+                    <Info className="h-5 w-5 text-primary" />
+                    <h3 className="font-semibold text-lg">Detail Project</h3>
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed">{selectedPortfolioItem.details}</p>
+                </div>
+
+                {/* Action Buttons */}
+                {selectedPortfolioItem.videoUrl && (
+                  <div className="flex flex-col sm:flex-row gap-3 pt-4">
+                    <Button
+                      className="flex-1 h-12"
+                      onClick={() => {
+                        setShowPortfolioDetail(false)
+                        handleVideoClick(selectedPortfolioItem)
+                      }}
+                    >
+                      <Play className="mr-2 h-5 w-5" />
+                      Putar Video
+                    </Button>
+                    <Button
+                      variant="outline"
+                      className="flex-1 h-12 bg-transparent"
+                      onClick={() => {
+                        window.open(selectedPortfolioItem.externalLink, "_blank")
+                      }}
+                    >
+                      <ExternalLink className="mr-2 h-5 w-5" />
+                      Buka di YouTube
+                    </Button>
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      )}
 
       {showVideoOptions && selectedVideoItem && (
         <div

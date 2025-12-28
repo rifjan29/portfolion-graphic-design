@@ -288,7 +288,7 @@ export default function PortfolioPage() {
       description: "Memenage Sosial Media untuk berbagai klien",
       client: "Multiple Clients",
       date: "Oktober 2023 - Sekarang",
-      duration: "3 minggu",
+      duration: "Oktober 2023 - Sekarang",
       tools: ["Adobe XD", "Canva", "Capcut", "Instagram Insights", "Photoshop"],
       role: "Content Planner, Designer, Video Editor",
       details:

@@ -449,7 +449,9 @@ export default function PortfolioPage() {
     setSelectedPortfolioItem(item)
     setShowPortfolioDetail(true)
   }
-
+  const isWedding = selectedVideoItem?.title
+  ?.toLowerCase()
+  .includes("wedding")
   return (
     <div className="min-h-screen bg-background transition-colors duration-300">
       <div className="fixed right-6 top-6 z-50">
@@ -1036,6 +1038,7 @@ export default function PortfolioPage() {
             className="relative w-full max-w-md animate-in zoom-in-95 duration-300"
             onClick={(e) => e.stopPropagation()}
           >
+            {/* Close Button */}
             <Button
               variant="ghost"
               size="icon"
@@ -1045,46 +1048,88 @@ export default function PortfolioPage() {
               <X className="h-6 w-6" />
             </Button>
 
-            <div className="space-y-4">
-              <h3 className="text-center text-2xl font-semibold text-white mb-6">Pilih Opsi</h3>
+            {/** WEDDING DETECTION */}
+            {(() => {
+              const isWedding =
+                selectedVideoItem?.title?.toLowerCase().includes("wedding")
 
-              {/* Card 1: Play in Modal */}
-              <Card
-                className="group cursor-pointer transition-all hover:scale-105 hover:shadow-xl bg-card/95 backdrop-blur"
-                onClick={handlePlayVideo}
-              >
-                <CardContent className="flex items-center gap-4 p-6">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 transition-all group-hover:bg-primary/20 group-hover:scale-110">
-                    <Play className="h-7 w-7 text-primary" />
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="font-semibold mb-1">Putar Video</h4>
-                    <p className="text-sm text-muted-foreground">Tonton video di sini</p>
-                  </div>
-                </CardContent>
-              </Card>
+              return (
+                <div className="space-y-4">
+                  {/* Title */}
+                  <h3 className="text-center text-2xl font-semibold text-white mb-6">
+                    {isWedding ? "Pilih Cara Menonton Wedding" : "Pilih Opsi"}
+                  </h3>
 
-              {/* Card 2: Open YouTube Link */}
-              <Card
-                className="group cursor-pointer transition-all hover:scale-105 hover:shadow-xl bg-card/95 backdrop-blur"
-                onClick={() => {
-                  window.open(selectedVideoItem.externalLink, "_blank")
-                  closeAllModals()
-                }}
-              >
-                <CardContent className="flex items-center gap-4 p-6">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-red-500/10 transition-all group-hover:bg-red-500/20 group-hover:scale-110">
-                    <ExternalLink className="h-7 w-7 text-red-500" />
-                  </div>
-                  <div className="flex-1">
-                    <h4 className="font-semibold mb-1">Buka di YouTube</h4>
-                    <p className="text-sm text-muted-foreground">Tonton di platform asli</p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+                  {/* CARD 1 */}
+                  <Card
+                    className="group cursor-pointer transition-all hover:scale-105 hover:shadow-xl bg-card/95 backdrop-blur"
+                    onClick={() => {
+                      if (isWedding) {
+                        window.open(selectedVideoItem.gdriveLink, "_blank")
+                        closeAllModals()
+                      } else {
+                        handlePlayVideo()
+                      }
+                    }}
+                  >
+                    <CardContent className="flex items-center gap-4 p-6">
+                      <div
+                        className={`flex h-14 w-14 items-center justify-center rounded-full transition-all group-hover:scale-110
+                          ${
+                            isWedding
+                              ? "bg-green-500/10 group-hover:bg-green-500/20"
+                              : "bg-primary/10 group-hover:bg-primary/20"
+                          }
+                        `}
+                      >
+                        {isWedding ? (
+                          <ExternalLink className="h-7 w-7 text-green-500" />
+                        ) : (
+                          <Play className="h-7 w-7 text-primary" />
+                        )}
+                      </div>
+
+                      <div className="flex-1">
+                        <h4 className="font-semibold mb-1">
+                          {isWedding ? "Putar via Google Drive" : "Putar Video"}
+                        </h4>
+                        <p className="text-sm text-muted-foreground">
+                          {isWedding
+                            ? "Tonton video wedding di Google Drive"
+                            : "Tonton video di sini"}
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* CARD 2 – YOUTUBE (HIDDEN IF WEDDING) */}
+                  {!isWedding && (
+                    <Card
+                      className="group cursor-pointer transition-all hover:scale-105 hover:shadow-xl bg-card/95 backdrop-blur"
+                      onClick={() => {
+                        window.open(selectedVideoItem.externalLink, "_blank")
+                        closeAllModals()
+                      }}
+                    >
+                      <CardContent className="flex items-center gap-4 p-6">
+                        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-red-500/10 transition-all group-hover:bg-red-500/20 group-hover:scale-110">
+                          <ExternalLink className="h-7 w-7 text-red-500" />
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="font-semibold mb-1">Buka di YouTube</h4>
+                          <p className="text-sm text-muted-foreground">
+                            Tonton di platform asli
+                          </p>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  )}
+                </div>
+              )
+            })()}
           </div>
         </div>
+
       )}
 
       {playingVideo && selectedVideoItem && (

@@ -54,261 +54,182 @@ export default function PortfolioPage() {
     // After Movie Videos
     {
       id: 1,
-      title: "After Movie - PKKMB UTM 2023",
+      title: "After Movie - Water Run Dispopar 3K Kota Probolinggo",
       category: "Video",
       image: "/after-movie-event-university-students.jpg",
-      description: "After movie pengenalan kehidupan kampus mahasiswa baru UTM",
+      description: "Video dokumentasi event Water Run Dispopar 3K Kota Probolinggo",
       videoUrl: "https://www.youtube.com/embed/QsZrU0G4D20",
       externalLink: "https://youtu.be/QsZrU0G4D20?si=MRpLAstTB50dKnCn",
-      client: "Universitas Trunojoyo Madura",
-      date: "September 2023",
-      duration: "5 menit",
-      tools: ["Adobe Premiere Pro", "After Effects", "DaVinci Resolve"],
+      client: "DISPOPAR Kota Probolinggo",
+      date: "Desember 2025",
+      duration: "2 menit",
+      tools: ["Adobe Premiere Pro", "After Effects", "Capcut"],
       role: "Video Editor & Colorist",
       details:
-        "Membuat after movie untuk kegiatan PKKMB UTM 2023 dengan menampilkan momen-momen penting selama kegiatan pengenalan kampus. Video ini menggabungkan footage dari berbagai sudut dan dilengkapi dengan color grading profesional serta motion graphics yang menarik.",
+      "After movie yang menampilkan keseruan event Water Run Dispopar 3K dengan highlight peserta, suasana acara, dan momen-momen menarik lainnya. Menggunakan teknik editing dinamis dan color grading yang vibrant untuk hasil yang menarik.",
     },
     {
       id: 2,
-      title: "After Movie - Wisuda UTM",
+      title: "After Movie - Walk To Harmony 2025",
       category: "Video",
       image: "/graduation-ceremony-after-movie.jpg",
-      description: "Dokumentasi momen wisuda mahasiswa Universitas Trunojoyo",
+      description: "Jalan Sehat Walk To Harmony 2025",
       videoUrl: "https://www.youtube.com/embed/W4V6qwHP9Fw",
       externalLink: "https://youtu.be/W4V6qwHP9Fw?si=A2fUlOTJeZTcwzKd",
-      client: "Universitas Trunojoyo Madura",
-      date: "Agustus 2023",
+      client: "BPPKAD Kabupaten Probolinggo",
+      date: "Desember 2025",
       duration: "7 menit",
-      tools: ["Adobe Premiere Pro", "After Effects", "Audition"],
+      tools: ["Adobe Premiere Pro", "After Effects", "Capcut"],
       role: "Videographer & Editor",
       details:
-        "Dokumentasi lengkap acara wisuda dengan menangkap momen emosional dan kebahagiaan para wisudawan. Menggunakan multiple camera angles dan audio mixing profesional untuk hasil yang cinematik.",
+      "Jalan Sehat Walk To Harmony 2025 yang menampilkan semangat kebersamaan dan kesehatan dengan visual yang energik dan musik yang upbeat. Fokus pada peserta, suasana acara, dan momen-momen inspiratif selama acara berlangsung.",
     },
     {
       id: 3,
-      title: "After Movie - Festival Seni",
+      title: "After Movie - Anugerah Inklusif 4",
       category: "Video",
       image: "/art-festival-after-movie.jpg",
-      description: "After movie festival seni dan budaya mahasiswa",
+      description: "Apresiasi event penghargaan untuk anak disabilitas",
       videoUrl: "https://www.youtube.com/embed/dmRMB1l2ScQ",
       externalLink: "https://youtu.be/dmRMB1l2ScQ?si=MhIjdJOptINO9XTl",
-      client: "Universitas Trunojoyo Madura",
-      date: "Juli 2023",
-      duration: "6 menit",
-      tools: ["Adobe Premiere Pro", "After Effects"],
+      client: "DISDIKBUD Kota Probolinggo",
+      date: "November 2025",
+      duration: "2 menit",
+      tools: ["Adobe Premiere Pro", "After Effects", "Capcut"],
       role: "Video Editor",
       details:
-        "After movie yang menampilkan keindahan festival seni dan budaya dengan penekanan pada visual yang artistik dan musik yang sesuai dengan tema budaya.",
+      "After movie Anugerah Inklusif 4 yang menampilkan momen-momen berharga dari event penghargaan untuk anak disabilitas. Menyoroti kebahagiaan, prestasi, dan semangat inklusivitas dengan editing yang menyentuh hati dan visual yang penuh warna.",
     },
     {
       id: 4,
-      title: "After Movie - Seminar Nasional",
+      title: "After Movie - Gebyar Anugerah Inklusif",
       category: "Video",
       image: "/national-seminar-event.jpg",
-      description: "Dokumentasi seminar nasional pendidikan",
+      description: "Apresiasi event penghargaan untuk anak disabilitas",
       videoUrl: "https://www.youtube.com/embed/7Op6a0yNMXc",
       externalLink: "https://youtu.be/7Op6a0yNMXc?si=CpaNAhy-5xKkwg3k",
-      client: "Universitas Trunojoyo Madura",
-      date: "Juni 2023",
-      duration: "4 menit",
-      tools: ["Adobe Premiere Pro", "Photoshop"],
+      client: "DISDIKBUD Kota Probolinggo",
+      date: "November 2025",
+      duration: "3 menit",
+      tools: ["Adobe Premiere Pro", "After Effects", "Capcut"],
       role: "Video Editor & Motion Designer",
       details:
-        "Video dokumentasi seminar nasional dengan fokus pada konten edukasi dan pembicara. Dilengkapi dengan lower thirds dan grafis informasi yang informatif.",
+      "After movie Gebyar Anugerah Inklusif yang menampilkan sorotan acara penghargaan untuk anak disabilitas. Menampilkan momen-momen inspiratif, kebahagiaan, dan semangat inklusivitas dengan editing yang dinamis dan visual yang menarik.",
     },
-    {
-      id: 5,
-      title: "After Movie - Workshop Kreatif",
-      category: "Video",
-      image: "/creative-workshop-students.jpg",
-      description: "After movie workshop pengembangan kreativitas mahasiswa",
-      videoUrl: "https://www.youtube.com/embed/QRHWpkc-wwo",
-      externalLink: "https://youtu.be/QRHWpkc-wwo?si=dNZLsw-z1QaIwkoK",
-      client: "Universitas Trunojoyo Madura",
-      date: "Mei 2023",
-      duration: "5 menit",
-      tools: ["Adobe Premiere Pro", "After Effects"],
-      role: "Video Editor",
-      details:
-        "Menampilkan proses kreatif dan hasil karya peserta workshop dengan narasi yang inspiratif dan visual yang engaging.",
-    },
-
     // Profile Videos
     {
       id: 6,
-      title: "Profil Organisasi Mahasiswa",
+      title: "Transparasi Desa Ranugedang",
       category: "Video",
       image: "/student-organization-profile.jpg",
-      description: "Video profil organisasi kemahasiswaan",
+      description: "Profil Desa Ranugedang Kabupaten Probolinggo",
       videoUrl: "https://www.youtube.com/embed/bDZjdUHVI-s",
       externalLink: "https://youtu.be/bDZjdUHVI-s?si=zawgcs34aFrNDYzv",
-      client: "Organisasi Mahasiswa UTM",
-      date: "April 2023",
+      client: "Pemerintah Desa Ranugedang",
+      date: "Maret 2025",
       duration: "3 menit",
       tools: ["Adobe Premiere Pro", "After Effects", "Photoshop"],
       role: "Video Producer & Editor",
       details:
-        "Video profil komprehensif yang menampilkan visi, misi, dan kegiatan organisasi dengan gaya yang modern dan profesional.",
+        "Vidoe profil desa yang menampilkan potensi, budaya, dan program pembangunan desa dengan pendekatan storytelling yang menarik dan visual yang informatif.",
     },
     {
       id: 7,
-      title: "Profil Fakultas Teknik",
+      title: "Transparasi Desa Gondosuli",
       category: "Video",
       image: "/engineering-faculty-profile.jpg",
-      description: "Video promosi Fakultas Teknik UTM",
+      description: "Profil Desa Gondosuli Kabupaten Probolinggo",
       videoUrl: "https://www.youtube.com/embed/wXv_3R8PLyM",
       externalLink: "https://youtu.be/wXv_3R8PLyM?si=69oIgAVZOShj8OdB",
       client: "Fakultas Teknik UTM",
-      date: "Maret 2023",
+      date: "April 2025",
       duration: "4 menit",
       tools: ["Adobe Premiere Pro", "After Effects", "Illustrator"],
       role: "Videographer & Editor",
       details:
-        "Video promosi yang menampilkan fasilitas, program studi, dan prestasi fakultas dengan narasi yang meyakinkan dan visual yang menarik.",
+        "Vidoe profil desa yang menampilkan potensi, budaya, dan program pembangunan desa dengan pendekatan storytelling yang menarik dan visual yang informatif.",
     },
-    {
-      id: 8,
-      title: "Profil Program Studi",
-      category: "Video",
-      image: "/study-program-profile-university.jpg",
-      description: "Video profil program studi unggulan",
-      videoUrl: "https://www.youtube.com/embed/FvZeMtLrwhk",
-      externalLink: "https://youtu.be/FvZeMtLrwhk?si=-7D5841CH0M0Rkh6",
-      client: "Universitas Trunojoyo Madura",
-      date: "Februari 2023",
-      duration: "5 menit",
-      tools: ["Adobe Premiere Pro", "After Effects"],
-      role: "Video Editor & Motion Designer",
-      details:
-        "Menampilkan keunggulan program studi dengan testimoni mahasiswa dan dosen, dilengkapi dengan infografis dan animasi yang informatif.",
-    },
-    {
-      id: 9,
-      title: "Profil Prestasi Mahasiswa",
-      category: "Video",
-      image: "/student-achievement-profile.jpg",
-      description: "Dokumentasi prestasi mahasiswa berprestasi",
-      videoUrl: "https://www.youtube.com/embed/IknCeSSEWGA",
-      externalLink: "https://youtu.be/IknCeSSEWGA?si=1JyA7UKuFL1K8tOk",
-      client: "Universitas Trunojoyo Madura",
-      date: "Januari 2023",
-      duration: "6 menit",
-      tools: ["Adobe Premiere Pro", "After Effects", "Audition"],
-      role: "Video Producer & Editor",
-      details:
-        "Kisah inspiratif mahasiswa berprestasi dengan pendekatan storytelling yang emosional dan visual yang cinematik.",
-    },
-    {
-      id: 10,
-      title: "Profil Kampus UTM",
-      category: "Video",
-      image: "/university-campus-profile-aerial-view.jpg",
-      description: "Video profil kampus Universitas Trunojoyo Madura",
-      videoUrl: "https://www.youtube.com/embed/TCFn3lBkRPg",
-      externalLink: "https://youtu.be/TCFn3lBkRPg?si=0quVQWm3XISUOzPy",
-      client: "Universitas Trunojoyo Madura",
-      date: "Desember 2022",
-      duration: "8 menit",
-      tools: ["Adobe Premiere Pro", "After Effects", "DaVinci Resolve"],
-      role: "Videographer, Editor & Colorist",
-      details:
-        "Video profil lengkap kampus dengan aerial shots, fasilitas, dan kehidupan kampus yang vibrant. Menggunakan color grading profesional dan musik yang sesuai.",
-    },
+    
 
     // Short Movie
     {
       id: 11,
-      title: "Short Movie - Perjuangan Mahasiswa",
+      title: "Short Movie - KEDOK MASA LALU | FILM PENDEK",
       category: "Video",
       image: "/short-film-student-struggle.jpg",
-      description: "Film pendek tentang perjuangan mahasiswa mengejar mimpi",
+      description: "Film pendek tentang perjuangan seorang yang ingin kembali ke masa lalu",
       videoUrl: "https://www.youtube.com/embed/57Vl-3lLMfo",
       externalLink: "https://youtu.be/57Vl-3lLMfo?si=YmSH4ECjt1iZtG7Z",
       client: "Project Personal",
-      date: "November 2022",
+      date: "Desember 2024",
       duration: "15 menit",
       tools: ["Adobe Premiere Pro", "After Effects", "Audition", "DaVinci Resolve"],
       role: "Director, Scripter, Editor",
       details:
-        "Film pendek dengan cerita yang kuat tentang perjuangan mahasiswa. Menggunakan teknik sinematografi yang baik dan editing yang tight untuk menyampaikan emosi.",
+      "Film pendek yang mengisahkan perjuangan seorang individu yang berusaha kembali ke masa lalu untuk memperbaiki kesalahan. Menggunakan teknik sinematografi yang kreatif dan narasi yang mendalam untuk menyampaikan pesan tentang penyesalan dan harapan.",
     },
     {
       id: 12,
-      title: "Short Movie - Persahabatan",
+      title: "Short Movie - PETAKA CINTA ORGANISASI | FILM PENDEK ORGANISASI",
       category: "Video",
       image: "/friendship-short-film.jpg",
-      description: "Film pendek tentang makna persahabatan sejati",
+      description: "Film pendek tentang persahabatan dalam organisasi",
       videoUrl: "https://www.youtube.com/embed/KaL5P8A1ghg",
       externalLink: "https://youtu.be/KaL5P8A1ghg?si=H5etJ8VDD5lVNmhA",
       client: "Project Personal",
-      date: "Oktober 2022",
-      duration: "12 menit",
+      date: "September 2024",
+      duration: "1 menit",
       tools: ["Adobe Premiere Pro", "After Effects", "Audition"],
       role: "Director, Cameraman, Editor",
       details: "Cerita menyentuh tentang persahabatan dengan visual yang cinematik dan musik yang emosional.",
     },
     {
       id: 13,
-      title: "Short Movie - Inspirasi",
+      title: "Short Movie - NYANYIAN PELANGI -- FILM EDUKASI",
       category: "Video",
       image: "/inspirational-short-movie.jpg",
-      description: "Film pendek inspiratif untuk generasi muda",
+      description: "Film pendek edukasi dengan pesan inspiratif untuk generasi muda",
       videoUrl: "https://www.youtube.com/embed/qHgPv8S2Xh0",
       externalLink: "https://youtu.be/qHgPv8S2Xh0?si=0UUb0fw1_48MDbpn",
       client: "Project Personal",
-      date: "September 2022",
+      date: "Oktober 2022",
       duration: "10 menit",
       tools: ["Adobe Premiere Pro", "After Effects"],
       role: "Scripter, Cameraman, Editor",
       details:
-        "Film pendek dengan pesan inspiratif yang kuat untuk generasi muda, menggunakan visual yang menarik dan narasi yang powerful.",
+        "Film pendek edukasi yang mengangkat tema inspiratif untuk generasi muda dengan visual yang menarik dan narasi yang kuat.",
     },
 
     // Podcast
     {
       id: 14,
-      title: "Podcast - Tips Produktif Mahasiswa",
+      title: "Jagongan Wakil Rakyat Bersama Mas Zaini",
       category: "Video",
       image: "/podcast-studio-students-talking.jpg",
-      description: "Podcast membahas tips produktif untuk mahasiswa",
+      description: "Guru Garda Terdepan Membangun Bangsa",
       videoUrl: "https://www.youtube.com/embed/ksGV8RNQPI4",
       externalLink: "https://youtu.be/ksGV8RNQPI4?si=cAa_Vj3ARZo1OpfG",
       client: "Project Personal",
-      date: "Agustus 2022",
+      date: "November 2025",
       duration: "30 menit",
       tools: ["Adobe Premiere Pro", "Audition", "Photoshop"],
-      role: "Video Editor & Audio Engineer",
+      role: "Cameraman",
       details:
-        "Podcast dengan visual yang engaging, subtitle, dan grafis pendukung untuk meningkatkan viewer engagement.",
-    },
-    {
-      id: 15,
-      title: "Podcast - Karir di Industri Kreatif",
-      category: "Video",
-      image: "/podcast-creative-industry-career.jpg",
-      description: "Diskusi tentang peluang karir di industri kreatif",
-      videoUrl: "https://www.youtube.com/embed/NRsopWCx9g8",
-      externalLink: "https://youtu.be/NRsopWCx9g8?si=_qh_K8CSv50PtOgs",
-      client: "Project Personal",
-      date: "Juli 2022",
-      duration: "45 menit",
-      tools: ["Adobe Premiere Pro", "Audition", "After Effects"],
-      role: "Video Editor & Audio Engineer",
-      details: "Podcast format video dengan multiple camera angles, subtitle, dan grafis informasi yang menarik.",
+        "Podcast edukasi dengan visual yang engaging dan audio mixing yang jernih untuk pengalaman mendengar yang nyaman.",
     },
     {
       id: 16,
-      title: "Podcast - Mengembangkan Skill Digital",
+      title: "Podcast - Program 100 Hari Kerja Wali Kota Probolinggo",
       category: "Video",
       image: "/placeholder.svg?height=400&width=600",
-      description: "Podcast tentang pengembangan skill digital untuk pemula",
+      description: "Dr. Aminuddin Buka-bukaan Program 100 Hari Kerja Wali Kota Probolinggo",
       videoUrl: "https://www.youtube.com/embed/ROwCl2J-V7Q",
       externalLink: "https://youtu.be/ROwCl2J-V7Q?si=Fe7FnqhQiRvAclkk",
       client: "Project Personal",
-      date: "Juni 2022",
+      date: "Februari 2025",
       duration: "40 menit",
-      tools: ["Adobe Premiere Pro", "Audition"],
-      role: "Video Editor",
+      tools: ["Adobe Premiere Pro", "Audition", "Photoshop"],
+      role: "Cameraman",
       details:
         "Podcast edukasi dengan visual yang clean dan audio mixing yang jernih untuk pengalaman mendengar yang nyaman.",
     },
@@ -316,92 +237,78 @@ export default function PortfolioPage() {
     // Video Edukasi
     {
       id: 17,
-      title: "Video Edukasi - Tutorial Editing",
+      title: "Video Edukasi - CAHAYA LITERASI DI DALAM LAPAS",
       category: "Video",
       image: "/placeholder.svg?height=400&width=600",
-      description: "Video tutorial editing untuk pemula",
+      description: "Edukasi literasi di dalam warga binaan lapas",
       videoUrl: "https://www.youtube.com/embed/FVbEncZkbnY",
       externalLink: "https://youtu.be/FVbEncZkbnY?si=T12aopwjKgONLWJl",
       client: "Project Personal",
-      date: "Mei 2022",
+      date: "Mei 2025",
       duration: "20 menit",
       tools: ["Adobe Premiere Pro", "Screen Recording Software"],
       role: "Content Creator & Editor",
-      details: "Tutorial lengkap editing video dengan penjelasan yang mudah dipahami dan visual yang clear.",
+      details: "Video edukasi yang menyajikan informasi literasi dengan cara yang menarik dan mudah dipahami, menggunakan animasi dan visual yang engaging.",
     },
 
     // Design Projects (keeping some design items)
     {
       id: 18,
-      title: "Brand Identity Design",
-      category: "Desain",
+      title: "Content Plan",
+      category: "Content Plan",
       image: "/modern-brand-identity-design-mockup.jpg",
-      description: "Identitas visual lengkap untuk startup teknologi",
-      client: "Tech Startup",
-      date: "April 2023",
-      duration: "2 minggu",
-      tools: ["Adobe Illustrator", "Photoshop", "Figma"],
-      role: "Brand Designer",
+      description: "Rencana konten untuk semua platform media sosial",
+      client: "Alfatih Corp Batch",
+      date: "OKtober 2023",
+      duration: "3 Bulan",
+      tools: ["Spreadsheet", "Trello", "Canva"],
+      role: "Content Planner",
       details:
-        "Menciptakan identitas visual yang modern dan profesional untuk startup teknologi, termasuk logo, color palette, typography, dan brand guidelines.",
+        "Menciptakan content plan terstruktur untuk berbagai platform media sosial dengan fokus pada tren dan engagement audiens.",
     },
     {
       id: 19,
-      title: "Social Media Campaign",
-      category: "Social Media",
+      title: "Progress Report",
+      category: "Progress Report",
       image: "/colorful-social-media-posts-grid.jpg",
-      description: "Kampanye media sosial untuk brand fashion",
-      client: "Fashion Brand",
-      date: "Maret 2023",
+      description: "Laporan kemajuan dan analitik media sosial",
+      client: "PW IPP Jawa Timur",
+      date: "Agustus 2025",
       duration: "1 bulan",
-      tools: ["Adobe Photoshop", "Illustrator", "Canva"],
-      role: "Social Media Designer",
+      tools: ["Insight Tools", "Google Analytics", "Excel"],
+      role: "Content Planner & Analyst",
       details:
-        "Merancang konten media sosial yang konsisten dan menarik untuk kampanye fashion brand dengan 50+ desain posts.",
+        "Merancang laporan kemajuan media sosial dengan analitik mendalam untuk mengukur performa konten dan strategi yang diterapkan.",
     },
     {
       id: 20,
-      title: "UI/UX Design Project",
-      category: "Desain",
+      title: "SOSMED Yang Pernah Ditangani",
+      category: "Portfolio Sosmed",
       image: "/mobile-app-interface-design-screens.png",
-      description: "Desain antarmuka aplikasi mobile e-commerce",
-      client: "E-commerce Startup",
-      date: "Februari 2023",
+      description: "Memenage Sosial Media untuk berbagai klien",
+      client: "Multiple Clients",
+      date: "Oktober 2023 - Sekarang",
       duration: "3 minggu",
-      tools: ["Figma", "Adobe XD", "Illustrator"],
-      role: "UI/UX Designer",
+      tools: ["Adobe XD", "Canva", "Capcut", "Instagram Insights", "Photoshop"],
+      role: "Content Planner, Designer, Video Editor",
       details:
-        "Merancang user interface dan user experience untuk aplikasi mobile e-commerce dengan fokus pada usability dan estetika modern.",
+        "Mengelola berbagai akun media sosial dengan strategi konten yang disesuaikan untuk meningkatkan jangkauan dan engagement audiens.",
     },
+
     {
       id: 21,
-      title: "Content Creation",
-      category: "Social Media",
-      image: "/instagram-content-creation-flatlay.jpg",
-      description: "Konten kreatif untuk Instagram dan TikTok",
-      client: "Multiple Clients",
-      date: "Januari 2023",
-      duration: "Ongoing",
-      tools: ["Adobe Photoshop", "Lightroom", "Canva"],
-      role: "Content Creator",
-      details:
-        "Membuat konten visual yang engaging untuk berbagai platform media sosial dengan fokus pada aesthetic dan engagement.",
-    },
-    {
-      id: 22,
-      title: "Motion Graphics",
+      title: "Wedding - Pernikahan",
       category: "Video",
-      image: "/motion-graphics-frames.png",
-      description: "Animasi motion graphics untuk explainer video",
-      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-      externalLink: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-      client: "Corporate Client",
-      date: "Desember 2022",
-      duration: "3 menit",
-      tools: ["Adobe After Effects", "Illustrator", "Premiere Pro"],
-      role: "Motion Designer",
-      details:
-        "Membuat motion graphics yang dynamic dan informatif untuk video explainer perusahaan dengan animasi yang smooth dan profesional.",
+      image: "/placeholder.svg?height=400&width=600",
+      description: "Video dokumentasi pernikahan",
+      videoUrl: "https://www.youtube.com/embed/FVbEncZkbnY",
+      externalLink: "https://youtu.be/FVbEncZkbnY?si=T12aopwjKgONLWJl",
+      client: "Project Personal",
+      date: "Juni 2025",
+      duration: "20 menit",
+      tools: ["Adobe Premiere Pro", "Screen Recording Software"],
+      role: "Content Creator & Editor",
+      details: "Video dokumentasi pernikahan yang menyajikan momen-momen penting dengan kualitas visual yang menarik dan editing yang profesional.",
     },
   ]
 
@@ -515,7 +422,7 @@ export default function PortfolioPage() {
     },
   ]
 
-  const filters = ["Semua", "Desain", "Video", "Social Media"]
+  const filters = ["Semua","Video", "Content Plan","Progress Report","Portfolio Sosmed"]
 
   const filteredPortfolio =
     activeFilter === "Semua" ? portfolioItems : portfolioItems.filter((item) => item.category === activeFilter)
@@ -581,15 +488,15 @@ export default function PortfolioPage() {
                 <span className="h-px flex-1 bg-border border-2"></span>
               </div>
               <h1 className="flex flex-wrap items-center gap-2 md:gap-3 text-xl md:text-3xl lg:text-5xl font-bold tracking-wide text-foreground">
-                <span>ROMADHONI</span>
+                <span>MOCH VIKRY</span>
 
                 {/* Say Hi */}
                 <span className="animate-wave text-xl md:text-2xl lg:text-5xl">👋</span>
-                <span>MOCH VIKRY</span>
+                <span>ROMADHONI</span>
 
                 {/* Badge Dhoni */}
                 <span className="px-2 md:px-3 py-1 font-bold text-xs md:text-sm rounded-full border border-primary/40 text-primary bg-primary/5 backdrop-blur-sm">
-                  Dhoni
+                  DHONI
                 </span>
               </h1>
               <p className="text-pretty text-base md:text-xl text-muted-foreground lg:text-2xl">
@@ -659,7 +566,7 @@ export default function PortfolioPage() {
                 <div className="space-y-3 md:space-y-4 pt-4 md:pt-8">
                   <div className="group relative overflow-hidden rounded-xl md:rounded-2xl shadow-lg transition-transform hover:scale-105">
                     <img
-                      src="/profil.jpeg"
+                      src="/profil4.jpeg"
                       alt="Design project"
                       className="aspect-[3/3] w-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
@@ -906,6 +813,30 @@ export default function PortfolioPage() {
               ))}
             </div>
           </div>
+            <div className="mt-12 rounded-lg bg-primary/5 p-6 md:p-8 border border-primary/20 animate-in fade-in slide-in-from-bottom-6 duration-700 [animation-delay:300ms]">
+              <div className="flex gap-4 items-start">
+                <Info className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                <div>
+                  <h4 className="font-semibold mb-2">Informasi Penting</h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Dokumen-dokumen di atas berisi perencanaan konten, laporan analitik, dan daftar lengkap proyek media
+                    sosial yang telah ditangani. Setiap dokumen dapat diakses melalui Google Drive dan dapat diunduh
+                    sesuai kebutuhan  dengan mengklik tautan di bawah ini:
+                  </p>
+                  <p className="mt-4">
+                    <a href="https://drive.google.com/drive/folders/1IVkc-EtKMOEv51yr9M_KlCIIfqRuzE6M" target="_blank" rel="noopener noreferrer">
+                      <Button
+                        size="lg"
+                        variant="outline"
+                        className="w-full sm:w-auto transition-transform hover:scale-105 bg-primary text-white"
+                      >
+                        Link Google Drive
+                      </Button>
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
         </div>
       </section>
 
